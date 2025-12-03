@@ -1,4 +1,4 @@
-export const setLock = (id, setColors) => {
+export const setLock = (id, setColors, setIsNotify) => {
 	setColors((prevColors) => {
 			return prevColors.map((color) => {
 				if (color.id !== id) {
@@ -6,10 +6,11 @@ export const setLock = (id, setColors) => {
 						...color,
 					}
 				}
-				let l = color.locked;
+				let lock = color.locked;
+				setIsNotify(lock ? "Цвет разблокирован" : "Цвет заблокирован");
 				return {
 					...color,
-					locked: !l,
+					locked: !lock,
 				};
 			});
 		});
