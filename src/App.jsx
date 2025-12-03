@@ -4,6 +4,7 @@ import Column from "./components/Column";
 import { setRandomColors } from "./modules/setRandomColors";
 import { setLock } from "./modules/setLock";
 import { initialColors } from "./data/initialColors.js";
+import { copyColor } from "./modules/copyColor.js";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
@@ -28,6 +29,7 @@ function App() {
                             locked={color.locked}
                             setLock={setLock}
                             setColors={setColors}
+                            copyColor={copyColor}
                         />
                     ))}
                 </div>
