@@ -11,10 +11,19 @@ import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [colorsFromHash, setColorsFromHash] = useState([]);
+    const [isNotify, setIsNotify] = useState("");
+
+    useEffect(() => {
+        const notifyTimer = setTimeout(() => {
+            setIsNotify("");
+        }, 2000);
+
+        return () => clearTimeout(notifyTimer);
+    }, [isNotify]);
 
     useEffect(() => {
         getColorsFromHash(setColorsFromHash);
-    }, [])
+    }, []);
 
     useEffect(() => {
         setRandomColors(setColors, colorsFromHash);
@@ -26,7 +35,7 @@ function App() {
 
     useEffect(() => {
         updateColorsHash(colors);
-    }, [colors])
+    }, [colors]);
 
     return (
         <div className="App">
@@ -41,11 +50,13 @@ function App() {
                             setLock={setLock}
                             setColors={setColors}
                             copyColor={copyColor}
+                            setIsNotify={setIsNotify}
                         />
                     ))}
                 </div>
                 <div className="controls">
                     <button onClick={() => reloadColors()}>Reload colors</button>
+                    {isNotify}
                 </div>
             </div>
         </div>
