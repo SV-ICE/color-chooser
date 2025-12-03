@@ -1,25 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Column from "./components/Column";
+import { setRandomColors } from "./modules/setRandomColors";
+import { setLock } from "./modules/setLock";
+import { initialColors } from "./data/initialColors.js";
 
 function App() {
-    const [colors, setColors] = useState([
-        { id: 1, color: "#dcbcbc", locked: false },
-        { id: 2, color: "#a3d5a3", locked: false },
-        { id: 3, color: "#70a8ff", locked: false },
-        { id: 4, color: "#dcdcae", locked: false },
-        { id: 5, color: "#c597c5", locked: false },
-    ]);
-    
+    const [colors, setColors] = useState(initialColors);
+
+    useEffect(() => {
+        setRandomColors(setColors);
+    }, []);
+
+    const reloadColors = () => {
+        setRandomColors(setColors);
+    };
+
     return (
         <div className="App">
             <div className="container">
                 <div className="colors">
                     {colors.map((color) => (
-                        <Column key={color.id} color={color.color} locked={color.locked} />
+                        <Column
+                            key={color.id}
+                            id={color.id}
+                            color={color.color}
+                            locked={color.locked}
+                            setLock={setLock}
+                            setColors={setColors}
+                        />
                     ))}
                 </div>
-                <div className="controls"></div>
+                <div className="controls">
+                    <button onClick={() => reloadColors()}>Reload colors</button>
+                </div>
             </div>
         </div>
     );
