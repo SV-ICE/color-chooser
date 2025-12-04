@@ -7,6 +7,7 @@ import { initialColors } from "./data/initialColors.js";
 import { copyColor } from "./modules/copyColor.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
+import { setLabelColor } from "./modules/setLabelColor.js";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
@@ -51,6 +52,7 @@ function App() {
                             setColors={setColors}
                             copyColor={copyColor}
                             setIsNotify={setIsNotify}
+                            labelColor={setLabelColor(color)}
                         />
                     ))}
                 </div>

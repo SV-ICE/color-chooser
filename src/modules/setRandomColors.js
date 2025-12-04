@@ -1,7 +1,6 @@
 import chroma from "chroma-js";
 
 export const setRandomColors = (setColors, hash) => {
-
     let isHash = hash.length > 0;
 
     setColors((prevColors) => {
