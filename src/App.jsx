@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import Column from "./components/Column";
 import { setRandomColors } from "./modules/setRandomColors";
 import { setLock } from "./modules/setLock";
 import { initialColors } from "./data/initialColors.js";
@@ -9,6 +7,8 @@ import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 import { setLabelColor } from "./modules/setLabelColor.js";
 import { copyUrl } from "./modules/copyUrl.js";
+import "./App.css";
+import Column from "./components/Column";
 import CurrentUrl from "./components/CurrentUrl.jsx";
 
 function App() {
@@ -32,11 +32,6 @@ function App() {
     useEffect(() => {
         setRandomColors(setColors, colorsFromHash);
     }, [colorsFromHash]);
-
-    const reloadColors = () => {
-        setRandomColors(setColors, []);
-        getCurrentUrl();
-    };
 
     useEffect(() => {
         updateColorsHash(colors);
@@ -68,7 +63,7 @@ function App() {
                         setIsNotify={setIsNotify}
                         copyUrl={copyUrl}
                     />
-                    <button onClick={() => reloadColors()}>Reload colors</button>
+                    <button onClick={() => setRandomColors(setColors, [])}>Reload colors</button>
                 </div>
             </div>
         </div>
