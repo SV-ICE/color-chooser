@@ -8,11 +8,14 @@ import { copyColor } from "./modules/copyColor.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 import { setLabelColor } from "./modules/setLabelColor.js";
+import { copyUrl } from "./modules/copyUrl.js";
+import CurrentUrl from "./components/CurrentUrl.jsx";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [colorsFromHash, setColorsFromHash] = useState([]);
     const [isNotify, setIsNotify] = useState("");
+    const [currentUrl, setCurrentUrl] = useState(window.location.href);
 
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
@@ -32,10 +35,12 @@ function App() {
 
     const reloadColors = () => {
         setRandomColors(setColors, []);
+        getCurrentUrl();
     };
 
     useEffect(() => {
         updateColorsHash(colors);
+        setCurrentUrl(window.location.href);
     }, [colors]);
 
     return (
@@ -57,8 +62,13 @@ function App() {
                     ))}
                 </div>
                 <div className="controls">
-                    <button onClick={() => reloadColors()}>Reload colors</button>
                     {isNotify}
+                    <CurrentUrl
+                        url={currentUrl}
+                        setIsNotify={setIsNotify}
+                        copyUrl={copyUrl}
+                    />
+                    <button onClick={() => reloadColors()}>Reload colors</button>
                 </div>
             </div>
         </div>
