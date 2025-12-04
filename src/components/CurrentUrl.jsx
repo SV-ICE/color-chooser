@@ -1,8 +1,8 @@
 const CurrentUrl = ({url, setIsNotify, copyUrl}) => {
     return (
         <div className="currentUrl">
-			<input type="text" value={url} />
-            <button onClick={() => copyUrl(url, setIsNotify)}>Copy URL</button>
+            <p>{url}</p>
+            <button className="btn" onClick={() => copyUrl(url, setIsNotify)}>Copy URL</button>
         </div>
     );
 };

@@ -57,13 +57,17 @@ function App() {
                     ))}
                 </div>
                 <div className="controls">
-                    {isNotify}
-                    <CurrentUrl
-                        url={currentUrl}
-                        setIsNotify={setIsNotify}
-                        copyUrl={copyUrl}
-                    />
-                    <button onClick={() => setRandomColors(setColors, [])}>Reload colors</button>
+                    <div className="controlsContainer">
+                        {isNotify}
+                        <button className="btn reloadBtn" onClick={() => setRandomColors(setColors, [])}>
+                            RELOAD COLORS
+                        </button>
+                        <CurrentUrl
+                            url={currentUrl}
+                            setIsNotify={setIsNotify}
+                            copyUrl={copyUrl}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
