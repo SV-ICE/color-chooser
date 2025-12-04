@@ -16,6 +16,7 @@ function App() {
     const [colorsFromHash, setColorsFromHash] = useState([]);
     const [isNotify, setIsNotify] = useState("");
     const [currentUrl, setCurrentUrl] = useState(window.location.href);
+    const [isControlsOpen, setIsControlsOpen] = useState(true);
 
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
@@ -56,7 +57,8 @@ function App() {
                         />
                     ))}
                 </div>
-                <div className="controls">
+                <div className={`controls animated ${isControlsOpen ? 'show' : ''}`}>
+                    <button onClick={() => setIsControlsOpen(!isControlsOpen)} className="openControlsBtn">show</button>
                     <div className="controlsContainer">
                         {isNotify}
                         <button className="btn reloadBtn" onClick={() => setRandomColors(setColors, [])}>
