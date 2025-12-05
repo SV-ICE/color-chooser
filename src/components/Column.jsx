@@ -5,13 +5,12 @@ import Unlock from "../assets/icons/unlock.svg?react";
 import { setLock } from "../modules/setLock";
 
 const Column = ({
-    id,
-    color,
-    locked,
+    props,
     setColors,
     copyColor,
     labelColor,
 }) => {
+    const { id, color, locked } = props;
     const { setIsNotify } = useContext(NotifyContext);
 
     return (
