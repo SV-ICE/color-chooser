@@ -30,6 +30,12 @@ function App() {
 
     useEffect(() => {
         getColorsFromHash(setColorsFromHash);
+
+        window.addEventListener("keydown", (e) => {
+            if (e.code === "Space") {
+                setRandomColors(setColors, []);
+            }
+        });
     }, []);
 
     useEffect(() => {
