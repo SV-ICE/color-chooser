@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { NotifyContext } from "../context/NotifyContext";
 import Lock from "../assets/icons/lock.svg?react";
 import Unlock from "../assets/icons/unlock.svg?react";
 
@@ -8,9 +10,10 @@ const Column = ({
     setLock,
     setColors,
     copyColor,
-    setIsNotify,
     labelColor,
 }) => {
+    const { setIsNotify } = useContext(NotifyContext);
+
     return (
         <div className="col" style={{ backgroundColor: color }}>
             <h2 style={{ color: labelColor }} onClick={() => copyColor(color, setIsNotify)}>
