@@ -10,6 +10,7 @@ import { copyUrl } from "./modules/copyUrl.js";
 import "./App.css";
 import Column from "./components/Column";
 import CurrentUrl from "./components/CurrentUrl.jsx";
+import MenuButton from "./components/MenuButton.jsx";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
@@ -57,11 +58,17 @@ function App() {
                         />
                     ))}
                 </div>
-                <div className={`controls animated ${isControlsOpen ? 'show' : ''}`}>
-                    <button onClick={() => setIsControlsOpen(!isControlsOpen)} className="openControlsBtn">show</button>
+                <div className={`controls animated ${isControlsOpen ? "show" : ""}`}>
+                    <MenuButton
+                        className="openControlsBtn"
+                        setIsControlsOpen={setIsControlsOpen}
+                        isControlsOpen={isControlsOpen}
+                    />
                     <div className="controlsContainer">
                         {isNotify}
-                        <button className="btn reloadBtn" onClick={() => setRandomColors(setColors, [])}>
+                        <button
+                            className="btn reloadBtn"
+                            onClick={() => setRandomColors(setColors, [])}>
                             RELOAD COLORS
                         </button>
                         <CurrentUrl
