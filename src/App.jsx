@@ -11,6 +11,7 @@ import "./App.css";
 import Column from "./components/Column";
 import CurrentUrl from "./components/CurrentUrl.jsx";
 import MenuButton from "./components/MenuButton.jsx";
+import Modal from "./components/Modal.jsx";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
@@ -22,7 +23,8 @@ function App() {
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
             setIsNotify("");
-        }, 2000);
+            setIsModalOpen("");
+        }, 1600);
 
         return () => clearTimeout(notifyTimer);
     }, [isNotify]);
@@ -42,6 +44,7 @@ function App() {
 
     return (
         <div className="App">
+            <Modal text={isNotify} />
             <div className="container">
                 <div className="colors">
                     {colors.map((color) => (
@@ -65,7 +68,6 @@ function App() {
                         isControlsOpen={isControlsOpen}
                     />
                     <div className="controlsContainer">
-                        {isNotify}
                         <button
                             className="btn reloadBtn"
                             onClick={() => setRandomColors(setColors, [])}>
