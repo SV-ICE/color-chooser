@@ -23,7 +23,6 @@ function App() {
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
             setIsNotify("");
-            setIsModalOpen("");
         }, 1600);
 
         return () => clearTimeout(notifyTimer);

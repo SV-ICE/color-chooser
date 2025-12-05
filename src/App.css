@@ -124,7 +124,6 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    padding: 20px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -137,6 +136,7 @@
         font-family: icons;
         color: inherit;
         pointer-events: none;
+        display: block;
     }
 }
 
