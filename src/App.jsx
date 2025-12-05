@@ -18,7 +18,7 @@ function App() {
     const [colorsFromHash, setColorsFromHash] = useState([]);
     const [isNotify, setIsNotify] = useState("");
     const [currentUrl, setCurrentUrl] = useState(window.location.href);
-    const [isControlsOpen, setIsControlsOpen] = useState(true);
+    const [isControlsOpen, setIsControlsOpen] = useState(false);
 
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
