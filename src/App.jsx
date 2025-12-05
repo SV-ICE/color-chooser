@@ -60,7 +60,6 @@ function App() {
                                 id={color.id}
                                 color={color.color}
                                 locked={color.locked}
-                                setLock={setLock}
                                 setColors={setColors}
                                 copyColor={copyColor}
                                 labelColor={setLabelColor(color)}

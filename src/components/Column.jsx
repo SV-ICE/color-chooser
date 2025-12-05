@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { NotifyContext } from "../context/NotifyContext";
 import Lock from "../assets/icons/lock.svg?react";
 import Unlock from "../assets/icons/unlock.svg?react";
+import { setLock } from "../modules/setLock";
 
 const Column = ({
     id,
     color,
     locked,
-    setLock,
     setColors,
     copyColor,
     labelColor,
