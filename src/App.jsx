@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { setRandomColors } from "./modules/setRandomColors";
 import { initialColors } from "./data/initialColors.js";
-import { copyColor } from "./modules/copyColor.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 import { setLabelColor } from "./modules/setLabelColor.js";
@@ -58,7 +57,6 @@ function App() {
                             key={color.id}
                             props={color}
                             setColors={setColors}
-                            copyColor={copyColor}
                             labelColor={setLabelColor(color)}
                         />
                     ))}

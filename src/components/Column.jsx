@@ -3,9 +3,10 @@ import { NotifyContext } from "../context/NotifyContext";
 import Lock from "../assets/icons/lock.svg?react";
 import Unlock from "../assets/icons/unlock.svg?react";
 import { setLock } from "../modules/setLock";
+import { copyColor } from "../modules/copyColor.js";
 import styles from "../styles/Column.module.css";
 
-const Column = ({ props, setColors, copyColor, labelColor }) => {
+const Column = ({ props, setColors, labelColor }) => {
     const { id, color, locked } = props;
     const { setIsNotify } = useContext(NotifyContext);
 
