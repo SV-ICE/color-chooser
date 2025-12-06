@@ -4,11 +4,13 @@ import Lock from "../assets/icons/lock.svg?react";
 import Unlock from "../assets/icons/unlock.svg?react";
 import { setLock } from "../modules/setLock";
 import { copyColor } from "../modules/copyColor.js";
+import { setLabelColor } from "../modules/setLabelColor.js";
 import styles from "../styles/Column.module.css";
 
-const Column = ({ props, setColors, labelColor }) => {
+const Column = ({ props, setColors }) => {
     const { id, color, locked } = props;
     const { setIsNotify } = useContext(NotifyContext);
+    let labelColor = setLabelColor(color);
 
     return (
         <div className={styles.col} style={{ backgroundColor: color }}>

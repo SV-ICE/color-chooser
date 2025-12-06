@@ -3,7 +3,6 @@ import { setRandomColors } from "./modules/setRandomColors";
 import { initialColors } from "./data/initialColors.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
-import { setLabelColor } from "./modules/setLabelColor.js";
 import { copyUrl } from "./modules/copyUrl.js";
 import "./App.css";
 import Column from "./components/Column";
@@ -53,12 +52,7 @@ function App() {
             <div className="container">
                 <div className="colorsList">
                     {colors.map((color) => (
-                        <Column
-                            key={color.id}
-                            props={color}
-                            setColors={setColors}
-                            labelColor={setLabelColor(color)}
-                        />
+                        <Column key={color.id} props={color} setColors={setColors} />
                     ))}
                 </div>
                 <div className={`controls animated ${isControlsOpen ? "show" : ""}`}>
