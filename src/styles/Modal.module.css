@@ -1,0 +1,38 @@
+.modal {
+    position: absolute;
+    inset: 0;
+    z-index: 69;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.content {
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 0, 0, 0.075);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    text-align: center;
+    padding: 20px 70px;
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mask-image: url(../assets/paintMask.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-mode: alpha;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+.text {
+    color: #e5e3e3;
+}

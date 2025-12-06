@@ -1,0 +1,52 @@
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20vh;
+    h2 {
+        font-size: 34px;
+        padding: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin-bottom: 20vh;
+        transition: all 0.3s ease;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.lockBtn {
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.colTitle {
+    font-size: 34px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20vh;
+    transition: all 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.lockIcon {
+    width: 50px;
+    height: 50px;
+}
