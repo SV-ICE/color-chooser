@@ -29,12 +29,18 @@ function App() {
     useEffect(() => {
         getColorsFromHash(setColorsFromHash);
 
-        window.addEventListener("keydown", (e) => {
+        const handleKeyDown = (e) => {
             e.preventDefault();
             if (e.code === "Space") {
                 setRandomColors(setColors, []);
             }
-        });
+        }
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        }
+
     }, []);
 
     useEffect(() => {
