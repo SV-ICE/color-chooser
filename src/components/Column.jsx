@@ -4,18 +4,15 @@ import Lock from "../assets/icons/lock.svg?react";
 import Unlock from "../assets/icons/unlock.svg?react";
 import { setLock } from "../modules/setLock";
 
-const Column = ({
-    props,
-    setColors,
-    copyColor,
-    labelColor,
-}) => {
+const Column = ({ props, setColors, copyColor, labelColor }) => {
     const { id, color, locked } = props;
     const { setIsNotify } = useContext(NotifyContext);
 
     return (
         <div className="col" style={{ backgroundColor: color }}>
-            <h2 style={{ color: labelColor }} onClick={() => copyColor(color, setIsNotify)}>
+            <h2
+                style={{ color: labelColor }}
+                onClick={() => copyColor(color, setIsNotify)}>
                 {color}
             </h2>
             <button

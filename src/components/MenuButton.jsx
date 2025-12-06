@@ -5,7 +5,8 @@ const MenuButton = ({ isControlsOpen, setIsControlsOpen }) => {
     return (
         <button
             onClick={() => setIsControlsOpen(!isControlsOpen)}
-            className="openControlsBtn" title={isControlsOpen ? 'Close' : 'Open'}>
+            className="openControlsBtn"
+            title={isControlsOpen ? "Close" : "Open"}>
             {isControlsOpen ? (
                 <MenuCloseIcon className="menuIcon" />
             ) : (

@@ -32,6 +32,7 @@ function App() {
         getColorsFromHash(setColorsFromHash);
 
         window.addEventListener("keydown", (e) => {
+            e.preventDefault();
             if (e.code === "Space") {
                 setRandomColors(setColors, []);
             }
