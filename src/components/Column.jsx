@@ -10,14 +10,12 @@ const Column = ({ props, setColors, copyColor, labelColor }) => {
 
     return (
         <div className="col" style={{ backgroundColor: color }}>
-            <h2
-                style={{ color: labelColor }}
-                onClick={() => copyColor(color, setIsNotify)}>
+            <h2 style={{ color: labelColor }} onClick={() => copyColor(color, setIsNotify)}>
                 {color}
             </h2>
             <button
                 onClick={() => {
-                    setLock(id, setColors, setIsNotify);
+                    setLock(id, locked, setColors, setIsNotify);
                 }}
                 className="lock-btn">
                 {locked ? (
