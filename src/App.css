@@ -28,7 +28,7 @@
     position: relative;
 }
 
-.colors {
+.colorsList {
     display: flex;
     align-items: stretch;
     width: 100%;

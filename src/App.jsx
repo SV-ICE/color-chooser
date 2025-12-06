@@ -52,7 +52,7 @@ function App() {
         <div className="App">
             <Modal text={isNotify} />
             <div className="container">
-                <div className="colors">
+                <div className="colorsList">
                     {colors.map((color) => (
                         <Column
                             key={color.id}
