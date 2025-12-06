@@ -3,7 +3,6 @@ import { setRandomColors } from "./modules/setRandomColors";
 import { initialColors } from "./data/initialColors.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
-import { copyUrl } from "./modules/copyUrl.js";
 import "./App.css";
 import Column from "./components/Column";
 import CurrentUrl from "./components/CurrentUrl.jsx";
@@ -64,7 +63,7 @@ function App() {
                             onClick={() => setRandomColors(setColors, [])}>
                             RELOAD COLORS
                         </button>
-                        <CurrentUrl url={currentUrl} copyUrl={copyUrl} />
+                        <CurrentUrl url={currentUrl} />
                     </div>
                 </div>
             </div>
