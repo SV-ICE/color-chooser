@@ -5,18 +5,15 @@ import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 import "./App.css";
 import Column from "./components/Column";
-import CurrentUrl from "./components/CurrentUrl.jsx";
-import MenuButton from "./components/MenuButton.jsx";
 import Modal from "./components/Modal.jsx";
 import { NotifyContext } from "./context/NotifyContext.jsx";
-import { ControlsContext } from "./context/ControlsContext";
+import Controls from "./components/Controls.jsx";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [colorsFromHash, setColorsFromHash] = useState([]);
     const [currentUrl, setCurrentUrl] = useState(window.location.href);
     const { isNotify, setIsNotify } = useContext(NotifyContext);
-    const { isControlsOpen } = useContext(ControlsContext);
 
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
@@ -34,13 +31,12 @@ function App() {
             if (e.code === "Space") {
                 setRandomColors(setColors, []);
             }
-        }
+        };
         window.addEventListener("keydown", handleKeyDown);
 
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
-        }
-
+        };
     }, []);
 
     useEffect(() => {
@@ -61,17 +57,11 @@ function App() {
                         <Column key={color.id} props={color} setColors={setColors} />
                     ))}
                 </div>
-                <div className={`controls animated ${isControlsOpen ? "show" : ""}`}>
-                    <MenuButton />
-                    <div className="controlsContainer">
-                        <button
-                            className="btn reloadBtn"
-                            onClick={() => setRandomColors(setColors, [])}>
-                            RELOAD COLORS
-                        </button>
-                        <CurrentUrl url={currentUrl} />
-                    </div>
-                </div>
+                <Controls
+                    currentUrl={currentUrl}
+                    setRandomColors={setRandomColors}
+                    setColors={setColors}
+                />
             </div>
         </div>
     );
