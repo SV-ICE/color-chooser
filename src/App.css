@@ -21,7 +21,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -40,7 +39,6 @@
     width: 100%;
     height: 300px;
     background-color: #735576;
-    background: linear-gradient(180deg, #735576 0%, #282727f9 90%, #232323 100%);
     background: linear-gradient(180deg, #735576 0%, #282727 90%, #232323 100%);
     display: flex;
     flex-direction: column;
@@ -96,4 +94,32 @@
     width: 100%;
     max-width: 30vw;
     min-width: 250px;
+}
+
+.reloadBtnMobile {
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 100px);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        justify-content: start;
+        background: linear-gradient(180deg, #735576 0%, #282727 90%, #232323 100%);
+    }
+    .colorsList {
+        display: flex;
+        align-items: stretch;
+        justify-items: start;
+        width: 100%;
+        height: calc(100vh - 50px);
+        position: relative;
+        flex-direction: column;
+    }
+
+    .reloadBtnMobile {
+        display: block;
+    }
 }
