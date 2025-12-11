@@ -26,7 +26,6 @@
 
 @media (max-width: 768px) {
     .openBtn {
-        left: 50%;
-        transform: translateX(100%);
+        display: none;
     }
 }

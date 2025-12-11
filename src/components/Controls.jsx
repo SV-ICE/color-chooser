@@ -3,6 +3,7 @@ import CurrentUrl from "./CurrentUrl";
 import { useContext } from "react";
 import { ControlsContext } from "../context/ControlsContext";
 import ReloadBtnSM from "./ReloadBtnSM";
+import CopyBtn from "./CopyBtn";
 
 const Controls = ({currentUrl, setRandomColors, setColors}) => {
 	const {isControlsOpen} = useContext(ControlsContext);
@@ -11,6 +12,7 @@ const Controls = ({currentUrl, setRandomColors, setColors}) => {
         <div className={`controls animated ${isControlsOpen ? "show" : ""}`}>
             <MenuButton />
             <ReloadBtnSM setRandomColors={setRandomColors} setColors={setColors} />
+            <CopyBtn url={currentUrl} />
             <div className="controlsContainer">
                 <button
                     className="btn reloadBtn"
