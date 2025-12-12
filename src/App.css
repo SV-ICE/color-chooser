@@ -27,14 +27,6 @@
     position: relative;
 }
 
-.colorsList {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
-
 .controls {
     width: 100%;
     height: 300px;
@@ -97,12 +89,6 @@
 }
 
 
-
- .scrollUpIcon {
-        display: none;
-    }
-
-
 @media (max-width: 768px) {
     .container {
         display: flex;
@@ -121,17 +107,5 @@
 
     .reloadBtnMobile {
         display: block;
-    }
-
-     .scrollUpIcon {
-        display: block;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        transform: translateY(-50%);
-        z-index: 5;
-        color: #c4c4c4;
-        filter: drop-shadow(0 0 16px #000);
-        width: 80px;
     }
 }

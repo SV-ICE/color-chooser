@@ -4,18 +4,17 @@ import { initialColors } from "./data/initialColors.js";
 import { updateColorsHash } from "./modules/updateColorsHash.js";
 import { getColorsFromHash } from "./modules/getColorsFromHash.js";
 import "./App.css";
-import Column from "./components/Column";
 import Modal from "./components/Modal.jsx";
 import { NotifyContext } from "./context/NotifyContext.jsx";
 import Controls from "./components/Controls.jsx";
-import ScrollUpIcon from "./assets/icons/scrollup.svg?react";
+import ScrollUpIndicator from "./components/ScrollUpIndicator.jsx";
+import ColorsList from "./components/ColorsList.jsx";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [colorsFromHash, setColorsFromHash] = useState([]);
     const [currentUrl, setCurrentUrl] = useState(window.location.href);
     const { isNotify, setIsNotify } = useContext(NotifyContext);
-    const scrollIconRef = useRef();
 
     useEffect(() => {
         const notifyTimer = setTimeout(() => {
@@ -24,16 +23,6 @@ function App() {
 
         return () => clearTimeout(notifyTimer);
     }, [isNotify]);
-
-    useEffect(() => {
-        const delIcon = setTimeout(() => {
-            scrollIconRef.current.remove();
-        }, 4000);
-
-        return () => {
-            clearTimeout(delIcon);
-        }
-    })
 
     useEffect(() => {
         getColorsFromHash(setColorsFromHash);
@@ -62,14 +51,10 @@ function App() {
 
     return (
         <div className="App">
-            <ScrollUpIcon ref={scrollIconRef} className="scrollUpIcon" />
+            <ScrollUpIndicator/>
             <Modal text={isNotify} />
             <div className="container">
-                <div className="colorsList">
-                    {colors.map((color) => (
-                        <Column key={color.id} props={color} setColors={setColors} />
-                    ))}
-                </div>
+                <ColorsList colors={colors} setColors={setColors}/>
                 <Controls
                     currentUrl={currentUrl}
                     setRandomColors={setRandomColors}

@@ -1,0 +1,15 @@
+.icon {
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    transform: translateY(-50%);
+    z-index: 5;
+    color: #c4c4c4;
+    filter: drop-shadow(0 0 16px #000);
+    width: 80px;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
