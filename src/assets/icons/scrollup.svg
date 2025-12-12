@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80" viewBox="0 0 56 80" role="img" aria-label="Scroll up">
+  <style>
+    :root {
+      --chevron-color: currentColor;    /* цвет стрелок */
+      --chevron-stroke: 3;     /* толщина линии */
+      --anim-duration: 1.6s;   /* общая длительность анимации */
+    }
+    .chev {
+      fill: none;
+      stroke: var(--chevron-color);
+      stroke-width: var(--chevron-stroke);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-name: upFade;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+    .c1 { animation-duration: var(--anim-duration); animation-delay: 0s; }
+    .c2 { animation-duration: var(--anim-duration); animation-delay: 0.2s; }
+    .c3 { animation-duration: var(--anim-duration); animation-delay: 0.4s; }
+    @keyframes upFade {
+      0%   { transform: translateY(0);   opacity: 0; }
+      15%  { opacity: 1;  transform: translateY(-4px); }
+      40%  { opacity: 0.9; transform: translateY(-10px); }
+      100% { opacity: 0;  transform: translateY(-22px); }
+    }
+  </style>
+  <polyline class="chev c1" points="14,54 28,40 42,54" />
+  <polyline class="chev c2" points="14,40 28,26 42,40" />
+  <polyline class="chev c3" points="14,26 28,12 42,26" />
+</svg>

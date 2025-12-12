@@ -12,7 +12,7 @@ const Controls = ({currentUrl, setRandomColors, setColors}) => {
         <div className={`controls animated ${isControlsOpen ? "show" : ""}`}>
             <MenuButton />
             <ReloadBtnSM setRandomColors={setRandomColors} setColors={setColors} />
-            <CopyBtn url={currentUrl} />
+            <CopyBtn className="copyBtnMobile" url={currentUrl} />
             <div className="controlsContainer">
                 <button
                     className="btn reloadBtn"

@@ -5,10 +5,17 @@
     background: transparent;
     border: none;
     outline: none;
+    display: none;
 }
 
 .icon {
 	width: 30px;
     height: 30px;
     color: #9a9a9a;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        display: block;
+    }
 }

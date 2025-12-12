@@ -96,12 +96,12 @@
     min-width: 250px;
 }
 
-.reloadBtnMobile {
-    position: absolute;
-    bottom: 15px;
-    left: calc(50% - 100px);
-    display: none;
-}
+
+
+ .scrollUpIcon {
+        display: none;
+    }
+
 
 @media (max-width: 768px) {
     .container {
@@ -114,12 +114,24 @@
         align-items: stretch;
         justify-items: start;
         width: 100%;
-        height: calc(100dvh - 50px);
+        height: calc(100% - 50px);
         position: relative;
         flex-direction: column;
     }
 
     .reloadBtnMobile {
         display: block;
+    }
+
+     .scrollUpIcon {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        transform: translateY(-50%);
+        z-index: 5;
+        color: #c4c4c4;
+        filter: drop-shadow(0 0 16px #000);
+        width: 80px;
     }
 }
