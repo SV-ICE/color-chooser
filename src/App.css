@@ -95,15 +95,6 @@
         justify-content: start;
         background: linear-gradient(180deg, #735576 0%, #282727 90%, #232323 100%);
     }
-    .colorsList {
-        display: flex;
-        align-items: stretch;
-        justify-items: start;
-        width: 100%;
-        height: calc(100% - 50px);
-        position: relative;
-        flex-direction: column;
-    }
 
     .reloadBtnMobile {
         display: block;
